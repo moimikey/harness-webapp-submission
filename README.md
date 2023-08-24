@@ -5,6 +5,13 @@ By Michael S. Hertzberg
 Email: <mshertzberg@gmail.com>
 LinkedIn: <https://linkedin.com/in/mshertzberg>
 
+## 0. Start
+
+```sh
+npx pnpm install
+npx pnpm run dev
+```
+
 ## 1. Design Evaluation
 
 ### 1.1 Visual Analysis
