@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: 00, 53, 28;
+  --color-secondary: 0, 0, 0;
+  --color-tertiary: 244, 244, 244;
+  --color-accent: 0, 0, 0;
+
+  /* #00351C */
+  /* --color-primary: 0, 53, 28; */
+  /* #C4DA5F */
+  /* --color-secondary: 196, 218, 95; */
+  /* #F4F4F4 */
+  /* --color-tertiary: 244, 244, 244; */
+  /* #8DA035 */
+  /* --color-accent: 141, 160, 53; */
+}

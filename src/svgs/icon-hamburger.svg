@@ -1,0 +1,5 @@
+<svg width="44" height="40" viewBox="0 0 44 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<line x1="8.5" y1="9.5" x2="35.5" y2="9.5" style="stroke: rgba(var(--color-secondary, 0, 0, 0));" stroke-width="3" stroke-linecap="round"/>
+<line x1="8.5" y1="18.5" x2="35.5" y2="18.5" style="stroke: rgba(var(--color-secondary, 0, 0, 0));" stroke-width="3" stroke-linecap="round"/>
+<line x1="8.5" y1="27.5" x2="35.5" y2="27.5" style="stroke: rgba(var(--color-secondary, 0, 0, 0));" stroke-width="3" stroke-linecap="round"/>
+</svg>
