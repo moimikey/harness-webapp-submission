@@ -69,7 +69,11 @@ export const Dropdown = observer(
     return (
       <div className="bg-white font-normal text-sm opacity-80">
         <label htmlFor="dropdown">Theme: </label>
-        <select id="dropdown" onChange={handleOptionChange} defaultValue="ecu">
+        <select
+          id="dropdown"
+          onChange={handleOptionChange}
+          defaultValue={store.currentBrand}
+        >
           <option>-- select --</option>
           {options.map((option) => (
             <option key={option} value={option}>
