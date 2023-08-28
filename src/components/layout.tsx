@@ -1,9 +1,11 @@
-import React, { useMemo } from "react";
+"use client";
+import React, { useCallback, useMemo } from "react";
 import { Inter } from "next/font/google";
 import SvgLogoEvergladesCreditUnion from "@/svgs/logo-everglades-credit-union.svg";
 import SvgIconHamburger from "@/svgs/icon-hamburger.svg";
 import { IStore, useStore } from "@/pages/rootStore";
 import { observer } from "mobx-react-lite";
+import { NextPageWithLayout } from "@/pages/_app";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -80,14 +82,19 @@ export const Dropdown = observer(
   }
 );
 
-function Layout({ children }: { children: React.ReactNode }) {
+function Layout({ children }: NextPageWithLayout) {
   const store = useStore();
-  const memoizedDropdown = useMemo(() => <Dropdown store={store} />, [store]);
 
   React.useEffect(() => {
-    store.fetchBrands();
-  }, [store]);
+    async function fetch() {
+      await store.fetchBrands();
+    }
+    fetch().catch((error: unknown) => {
+      console.error(error);
+    });
+  }, [store, children]);
 
+  const memoizedDropdown = useMemo(() => <Dropdown store={store} />, [store]);
   const currentBrand = store.currentBrand;
   const brandLogo = store.brands?.get(currentBrand)?.logo;
 

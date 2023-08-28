@@ -1,3 +1,4 @@
+"use client";
 import type { ReactElement } from "react";
 import Image from "next/image";
 import Layout from "@/components/layout";
@@ -5,9 +6,9 @@ import SvgIconAccount from "@/svgs/icon-account.svg";
 import SvgIconBasket from "@/svgs/icon-basket.svg";
 import SvgIconCharity from "@/svgs/icon-charity.svg";
 import SvgIconRewards from "@/svgs/icon-rewards.svg";
-import type { NextPageWithLayout } from "./_app";
+import type { AppOwnProps, NextPageWithLayout } from "./_app";
 
-const Page: NextPageWithLayout = () => {
+const Page: NextPageWithLayout = ({ store }: AppOwnProps) => {
   return (
     <div className="bg-white level-page">
       <main className="max-w-[1080px] grid m-auto">
@@ -122,9 +123,10 @@ const Page: NextPageWithLayout = () => {
 };
 
 Page.getLayout = function getLayout(page: ReactElement) {
+  const { store } = page.props;
   return (
     <>
-      <Layout>{page}</Layout>
+      <Layout store={store}>{page}</Layout>
     </>
   );
 };

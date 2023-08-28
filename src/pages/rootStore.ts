@@ -58,7 +58,7 @@ const colorProps: Array<keyof typeof defaultColors> = [
 const Store = types
   .model({
     brands: types.optional(types.map(Brand), {}),
-    isLoading: types.optional(types.boolean, false),
+    isLoading: types.optional(types.boolean, true),
     error: types.optional(types.string, ""),
     currentBrand: types.optional(types.string, ""),
   })
@@ -104,14 +104,12 @@ const Store = types
           self.brands.set(bankName, brandModel);
         });
         self.currentBrand = "ecu";
-        self.isLoading = false;
-        return self.brands;
       } catch (error) {
-        self.isLoading = false;
         self.error = "Error fetching data";
         console.error("Error fetching data:", error);
-        return self.brands;
       }
+      self.isLoading = false;
+      return self.brands;
     }),
   }));
 
